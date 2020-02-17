@@ -1,8 +1,5 @@
 # author = Thomas Haydn
-# title  = Electricity market players behavior simulated with Q-learning
-# This script simulates price bidding behavior of different players in a electricity market with uniform bidding.
-# Each player is owner of multiple generators and can decide on a bidding strategy for each generator individually.
-# Players use a simple reinforcement learning strategy (Q-learning) to improve from auction-round to auction-round.
+# title  = Q-learning-electricity-market
 
 # experiment => sum of all runs for certain parameter settings
 # run => sum of all iterations
@@ -12,7 +9,6 @@ import numpy as np
 import random
 import math
 import itertools
-import csv
 from matplotlib import pyplot as plt
 import time
 import cProfile
@@ -461,19 +457,19 @@ def count_combinations(listx):
 """Global Variables--------------------------------------------------------------------------------------------------"""
 # Collection of global variables and lists. Parameter settings can be changed here.
 
-ACTION_PER_GEN = 4
+ACTION_PER_GEN = 7
 PRICE_COEF = 2
 STATE_SIZE = 1
 PLAYER_NMB = 2
-PLAYER_GEN_NMB = [2,2]
+PLAYER_GEN_NMB = [1,1]
 
-RUNS = 50
+RUNS = 10
 
 # Exploration, Exploitation trade of
 EPSILON_MAX = 1
 EPSILON_MIN = 0.00
 EPSILON_DECAY_RATE = 5 / 150000
-LEARNING_RATE = 0.00475 # Defines the weight of new experiences.
+LEARNING_RATE = 0.002 # Defines the weight of new experiences.
 
 plt.style.use('seaborn-whitegrid')
 
